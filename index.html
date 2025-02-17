@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
+        <title>Coding Assesment L2 boilerplate</title>
+
+    </head>
+
+    <body>
+        <!-- Your code goes here -->
+        <div class="menu" id="menu">
+            <div class="close_icon" onclick="toggleMenu()">
+                <img src="./images/close.png" alt="close_icon" width="40px">
+            </div>
+            <div>Home</div>
+            <div>Shop</div>
+            <div>About</div>
+            <div>Contact</div>
+        </div>
+
+        <div class="container">
+            <!-- navbar section -->
+
+            <div class="responsive-navbar" id="responsiveNavbar">
+                <div class="hamburger_image" onclick="toggleMenu()">
+                    <img src="./images/hamburger.png" alt="hamburger_icon">
+                </div>
+
+                <div class="nav_1" id="hideLogo">
+                    <img src="./images/logo.png" alt="logo">
+                    <span>Marmeto</span>
+                </div>
+
+                <div class="nav_3">
+                    <div>
+                        <img src="./images/search_icon.png" alt="search_icon">
+                    </div>
+                    <div>
+                        <img src="./images/heart_icon.png" alt="heart_icon">
+                    </div>
+                    <div>
+                        <img src="./images/cart_icon.png" alt="cart_icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar" id="normalNavbar">
+                <div class="nav_1">
+                    <img src="./images/logo.png" alt="logo">
+                    <span>Marmeto</span>
+                </div>
+                <div class="nav_2">
+                    <div>Home</div>
+                    <div>Shop</div>
+                    <div>About</div>
+                    <div>Contact</div>
+                </div>
+                <div class="nav_3">
+                    <div>
+                        <img src="./images/search_icon.png"
+                            alt="search_icon">
+                    </div>
+                    <div>
+                        <img src="./images/heart_icon.png"
+                            alt="heart_icon">
+                    </div>
+                    <div>
+                        <img src="./images/cart_icon.png"
+                            alt="cart_icon">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero section -->
+            <div class="hero">
+                <div class="hero_content">
+
+                    <div>
+                        <img src="./images/logo.png" alt="logo_image">
+                    </div>
+
+                    <div class="hero_content_text">
+                        Cart
+                    </div>
+
+                    <div class="hero_content_links">
+                        <div>Home</div>
+                        <img src="./images/arrow.png" alt="arrow_image">
+                        <div>Cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Section -->
+
+            <!-- cart overview section -->
+            <div class="cart_overview_section">
+                <div class="cart_section">
+                    <div class="cart_header">
+                        <div>Image</div>
+                        <div>Product</div>
+                        <div>Price</div>
+                        <div>Quantity</div>
+                        <div>Subtotal</div>
+                    </div>
+
+                    <!-- Cart Products will be populated dynamically here -->
+                    <div class="cart_products" id="cartProducts"></div>
+                </div>
+
+                <!-- Cart Total Section -->
+                <div class="cart_total">
+                    <div>Cart Totals</div>
+                    <div class="cart_subtotal_price">
+                        <div>Subtotal</div>
+                        <div id="subtotalPrice">₹ 0.00</div>
+                    </div>
+
+                    <div class="cart_total_price">
+                        <div>Total</div>
+                        <div id="totalPrice">₹ 0.00</div>
+                    </div>
+
+                    <div>
+                        <button id="checkoutButton">Check Out</button>
+                        <button id="refreshCartButton"
+                            style="display: none;">Refresh Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer part -->
+
+            <div class="footer">
+
+                <div class="footer-content">
+                    <img src="./images/award.png" alt="award_icon">
+                    <div>
+                        <div>High Quality</div>
+                        <div>crafted from top materials</div>
+                    </div>
+                </div>
+
+                <div class="footer-content">
+                    <img src="./images/tick.png" alt="tick_icon">
+                    <div>
+                        <div>Warranty Protection</div>
+                        <div>Over 2 years</div>
+                    </div>
+                </div>
+
+                <div class="footer-content">
+                    <img src="./images/hand.png" alt="hand_icon">
+                    <div>
+                        <div>Free Shipping</div>
+                        <div>Order over 150 $</div>
+                    </div>
+                </div>
+
+                <div class="footer-content">
+                    <img src="./images/mic.png" alt="mic_icon">
+                    <div>
+                        <div>24 / 7 Support</div>
+                        <div>Dedicated support</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Happy coding 😊 -->
+        <script src="./script.js"></script>
+    </body>
+
+</html>
