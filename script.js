@@ -9,7 +9,7 @@ function toggleMenu() {
 // Function to handle the responsive navbar behavior
 function checkScreenSize() {
   const mediaQuery = window.matchMedia("(max-width: 1100px)");
-  const hideLogo = window.matchMedia("(max-width: 660px)");
+  const hideLogo = window.matchMedia("(max-width: 768px)");
 
 
   if (mediaQuery.matches) {
@@ -40,21 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
 fetch('https://cdn.shopify.com/s/files/1/0883/2188/4479/files/apiCartData.json?v=1728384889')
   .then(response => response.json())
   .then(cartData => {
-    // Populate the cart with items from the fetched data
     populateCart(cartData);
   })
   .catch(error => {
     console.error("Error fetching cart data:", error);
   });
 
-// Function to format currency (Indian Rupees)
 function formatCurrency(amount) {
   if (amount >= 100000) {
     return `₹ ${(amount / 100000).toFixed(1)}L`;
   }
   return `₹ ${amount.toLocaleString('en-IN')}`;
 }
-// Function to populate cart items dynamically
 function populateCart(cartData) {
   const cartProductsContainer = document.getElementById("cartProducts");
   const subtotalElement = document.getElementById("subtotalPrice");
@@ -62,7 +59,6 @@ function populateCart(cartData) {
 
   let subtotal = 0;
 
-  // Loop through each cart item
   cartData.items.forEach(item => {
     const cartProduct = document.createElement("div");
     cartProduct.classList.add("cart_product");
