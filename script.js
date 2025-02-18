@@ -67,21 +67,29 @@ function populateCart(cartData) {
     const cartProduct = document.createElement("div");
     cartProduct.classList.add("cart_product");
     cartProduct.dataset.productId = item.id;
+
     // Create product image
+    const productImageContainer = document.createElement("div");
+    productImageContainer.setAttribute("data-label", "Image"); // Add label
     const productImage = document.createElement("img");
+    productImageContainer.classList.add("product_image");
     productImage.src = item.image;
     productImage.alt = item.title;
+    productImageContainer.appendChild(productImage);
 
     // Product title
     const productTitle = document.createElement("p");
+    productTitle.setAttribute("data-label", "Product"); // Add label
     productTitle.textContent = item.title;
 
     // Product price
     const productPrice = document.createElement("p");
+    productPrice.setAttribute("data-label", "Price"); // Add label
     productPrice.textContent = formatCurrency(item.price / 100);
 
-
+    // Quantity box
     const quantityBox = document.createElement("div");
+    quantityBox.setAttribute("data-label", "Quantity"); // Add label
     quantityBox.classList.add("quantity-box");
 
     const quantitySpan = document.createElement("span");
@@ -96,12 +104,13 @@ function populateCart(cartData) {
       }
     });
 
-
+    // Subtotal
     const productSubtotal = document.createElement("p");
+    productSubtotal.setAttribute("data-label", "Subtotal"); // Add label
     productSubtotal.textContent = formatCurrency((item.price * item.quantity) / 100);
     productSubtotal.classList.add("product-subtotal");
 
-
+    // Trash icon
     const trashIcon = document.createElement("div");
     const trashImg = document.createElement("img");
     trashImg.src = "./images/trash.png";
@@ -112,13 +121,14 @@ function populateCart(cartData) {
     trashIcon.appendChild(trashImg);
     trashIcon.addEventListener("click", () => removeItem(item.id));
 
-
+    // Append elements to cart product
     quantityBox.appendChild(quantitySpan);
-    cartProduct.append(productImage, productTitle, productPrice, quantityBox, productSubtotal, trashIcon);
+    cartProduct.append(productImageContainer, productTitle, productPrice, quantityBox, productSubtotal, trashIcon);
 
+    // Append cart product to container
     cartProductsContainer.appendChild(cartProduct);
 
-
+    // Update subtotal
     subtotal += (item.price * item.quantity) / 100;
   });
 
